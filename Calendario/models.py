@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as lazy
+from django.utils.translation import gettext_lazy as lazy
 from django.contrib import admin
 from django.http import HttpResponse
 from django.utils.timezone import now
