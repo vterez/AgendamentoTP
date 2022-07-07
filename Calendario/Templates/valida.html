@@ -1,0 +1,33 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="#">
+<style>
+body {background-color: #121212;}
+p {color:#E0E0E0;font-family:calibri;}
+label {color:#E0E0E0;font-family:calibri;}
+input[type='number'] {background-color: #E0E0E0;font-family:calibri;font-size:20px}
+input[type='text'] {background-color: #E0E0E0;font-family:calibri;font-size:20px}
+label {font-size:20px;}
+h2 {color:#E0E0E0;font-family:calibri;}
+</style>
+</head>
+
+<h2>Sistema de agendamento de apresentação do Trabalho Prático - checagem de código</h2>
+
+
+<p>Insira os dados abaixo para checar a validade de um código</p>
+
+
+<form action="/ValidaCodigo" method="get">
+	{% csrf_token %}
+	<label for="matricula">Número de matrícula:</label><br>
+    <input id="matricula" type="number" name="matricula" required><br><br>
+	<label for="opcao">Código da opção de horário:</label><br>
+    <input id="opcao" type="text" name="opcao" required><br><br>
+	<label for="codigo">Código de validação: </label><br>
+    <input id="codigo" type="text" name="codigo" required><br><br>
+    <input type="submit" value="Enviar">
+</form>
+
+<p style="color:red">{{resp}}</p>
